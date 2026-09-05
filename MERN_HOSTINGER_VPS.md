@@ -165,6 +165,17 @@ Configure Nginx for React Frontends
     listen 80;
     server_name yourdomain1.com www.yourdomain1.com;
 
+    # Sitemap
+    location = /sitemap.xml {
+        proxy_pass http://localhost:5000/sitemap.xml;
+
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # Frontend
     location / {
         root /var/www/your-repo/frontend/dist;
         try_files $uri /index.html;
