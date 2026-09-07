@@ -282,6 +282,32 @@ Verify Auto-Renewal
 certbot renew --dry-run
 ```
 
+### 7. After upload 
+
+Get latest changes
+
+```bash
+git pull origin main
+```
+
+Latest build
+
+```bash
+npm run build
+```
+
+Restart backend
+
+```bash
+pm2 restart project-name
+```
+
+Show backend logs
+
+```bash
+pmw log project-name
+```
+
 If you still need help in deployment:
 
 Contact us on email : barunkumarmahakud@gmail.com
