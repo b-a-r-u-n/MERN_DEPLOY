@@ -305,7 +305,7 @@ pm2 restart project-name
 Show backend logs
 
 ```bash
-pmw log project-
+pmw log project-name
 ```
 
 If you still need help in deployment:
